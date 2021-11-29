@@ -27,6 +27,7 @@ namespace Activity_Tracker_WPF
                 UpdateFileName(path);
 
                 data = File.ReadAllText(path);
+                dataTextBox.ScrollToHome();
                 dataTextBox.Text = data;
             }
         }
@@ -56,6 +57,16 @@ namespace Activity_Tracker_WPF
             {
                 LoadFile(openFileDialog.FileName);
             }
+        }
+
+        private void ClosingHandler(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveFile();
+        }
+
+        private void SaveFile()
+        {
+            File.WriteAllText(Settings.Default.LastPath, dataTextBox.Text);
         }
     }
 }
