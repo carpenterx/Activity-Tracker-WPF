@@ -10,7 +10,8 @@
         Title="Activity Tracker"
         Height="800" Width="740"
         TitleCharacterCasing="Normal"
-        WindowStartupLocation="CenterScreen" Closing="ClosingHandler">
+        WindowStartupLocation="CenterScreen"
+        Closing="ClosingHandler">
     <mah:MetroWindow.Resources>
         <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="Label" x:Key="LabelHover">
             <Setter Property="BorderThickness" Value="1"/>

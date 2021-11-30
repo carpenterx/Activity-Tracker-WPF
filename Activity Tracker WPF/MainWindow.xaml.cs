@@ -133,7 +133,7 @@ namespace Activity_Tracker_WPF
         private void CreateNewFile(object sender, System.Windows.RoutedEventArgs e)
         {
             string newFileName = GetFileName();
-            string newFilePath = Path.Combine(@"C:\Users\jorda\Dropbox", newFileName);
+            string newFilePath = Path.Combine(Settings.Default.SaveRoot, newFileName);
             if (!File.Exists(newFilePath))
             {
                 using FileStream fs = File.Create(newFilePath);
@@ -143,7 +143,7 @@ namespace Activity_Tracker_WPF
 
         private static string GetFileName()
         {
-            return $"Mock Internship test [{DateTime.Now:MMMM yyyy}].txt";
+            return $"{Settings.Default.FilenameTemplate} [{DateTime.Now:MMMM yyyy}].txt";
         }
     }
 }

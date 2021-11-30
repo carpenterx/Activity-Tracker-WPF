@@ -34,5 +34,29 @@ namespace Activity_Tracker_WPF.Resources {
                 this["LastPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\jorda\\Dropbox")]
+        public string SaveRoot {
+            get {
+                return ((string)(this["SaveRoot"]));
+            }
+            set {
+                this["SaveRoot"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mock Internship")]
+        public string FilenameTemplate {
+            get {
+                return ((string)(this["FilenameTemplate"]));
+            }
+            set {
+                this["FilenameTemplate"] = value;
+            }
+        }
     }
 }
