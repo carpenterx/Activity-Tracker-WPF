@@ -6,7 +6,12 @@
     <RootNamespace>Activity_Tracker_WPF</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Igh0zt-Ios7-Style-Metro-Ui-MetroUI-Google-Task.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Igh0zt-Ios7-Style-Metro-Ui-MetroUI-Google-Task.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
