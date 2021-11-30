@@ -16,7 +16,7 @@ namespace Activity_Tracker_WPF
         public DelegateCommand InsertDayCommand { get; }
         public DelegateCommand InsertTaskCommand { get; }
 
-        private string data;
+        private string? data;
 
         public MainWindow()
         {
@@ -63,19 +63,19 @@ namespace Activity_Tracker_WPF
             FocusTextBox(dataTextBox);
         }
 
-        private void FocusTextBox(TextBox textBox)
+        private static void FocusTextBox(TextBox textBox)
         {
             textBox.CaretIndex = textBox.Text.Length;
             textBox.ScrollToEnd();
             textBox.Focus();
         }
 
-        private string GetDate()
+        private static string GetDate()
         {
             return $"[{DateTime.Today:dd-MM-yyyy}]";
         }
 
-        private string GetTask()
+        private static string GetTask()
         {
             return $"- [{DateTime.Now:HH:mm-HH:mm}] worked on ";
         }
@@ -93,7 +93,7 @@ namespace Activity_Tracker_WPF
             }
         }
 
-        private void UpdateLastPath(string newPath)
+        private static void UpdateLastPath(string newPath)
         {
             if (Settings.Default.LastPath != newPath)
             {
@@ -141,7 +141,7 @@ namespace Activity_Tracker_WPF
             LoadFile(newFilePath);
         }
 
-        private string GetFileName()
+        private static string GetFileName()
         {
             return $"Mock Internship test [{DateTime.Now:MMMM yyyy}].txt";
         }

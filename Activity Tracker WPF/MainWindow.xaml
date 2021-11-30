@@ -49,6 +49,6 @@
             <!--<iconPacks:PackIconBootstrapIcons Grid.Column="2" Kind="ChevronRight" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="24" Height="24" Margin="2"/>-->
         </Grid>
 
-        <TextBox x:Name="dataTextBox" Grid.Row="2" Padding="2" Margin="120,2,120,20" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontSize="16" Opacity="0.8"/>
+        <TextBox x:Name="dataTextBox" Grid.Row="2" Padding="2" Margin="120,2,120,20" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontSize="16" Opacity="0.8" BorderThickness="0"/>
     </Grid>
 </mah:MetroWindow>
