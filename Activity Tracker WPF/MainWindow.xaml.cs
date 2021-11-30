@@ -32,7 +32,12 @@ namespace Activity_Tracker_WPF
 
         private void OnInsertDay(object commandParameter)
         {
-            AddText(GetDate(), 3);
+            int newLines = 3;
+            if (dataTextBox.Text.Length == 0)
+            {
+                newLines = 0;
+            }
+            AddText(GetDate(), newLines);
         }
 
         private void OnInsertTask(object commandParameter)
@@ -47,9 +52,11 @@ namespace Activity_Tracker_WPF
 
         private void AddText(string text, int newLines = 1)
         {
-            for (int i = 0; i < newLines; i++)
+            int currentNewLines = 0;
+            while (newLines > currentNewLines)
             {
                 dataTextBox.AppendText(Environment.NewLine);
+                currentNewLines++;
             }
             
             dataTextBox.AppendText(text);
@@ -65,13 +72,11 @@ namespace Activity_Tracker_WPF
 
         private string GetDate()
         {
-            //return DateTime.Today.ToString("[dd-MM-yyyy]");
             return $"[{DateTime.Today:dd-MM-yyyy}]";
         }
 
         private string GetTask()
         {
-            //return DateTime.Now.ToString("- [HH:mm-HH:mm] ");
             return $"- [{DateTime.Now:HH:mm-HH:mm}] worked on ";
         }
 
@@ -83,8 +88,8 @@ namespace Activity_Tracker_WPF
                 UpdateFileName(path);
 
                 data = File.ReadAllText(path);
-                dataTextBox.ScrollToHome();
                 dataTextBox.Text = data;
+                FocusTextBox(dataTextBox);
             }
         }
 
@@ -127,7 +132,18 @@ namespace Activity_Tracker_WPF
 
         private void CreateNewFile(object sender, System.Windows.RoutedEventArgs e)
         {
+            string newFileName = GetFileName();
+            string newFilePath = Path.Combine(@"C:\Users\jorda\Dropbox", newFileName);
+            if (!File.Exists(newFilePath))
+            {
+                using FileStream fs = File.Create(newFilePath);
+            }
+            LoadFile(newFilePath);
+        }
 
+        private string GetFileName()
+        {
+            return $"Mock Internship test [{DateTime.Now:MMMM yyyy}].txt";
         }
     }
 }
