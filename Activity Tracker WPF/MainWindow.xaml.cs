@@ -5,7 +5,6 @@ using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace Activity_Tracker_WPF
 {
@@ -18,7 +17,6 @@ namespace Activity_Tracker_WPF
         public DelegateCommand InsertTaskCommand { get; }
 
         private string data;
-        //private static string newDayTemplate = "[29-11-2021]";
 
         public MainWindow()
         {
@@ -67,14 +65,14 @@ namespace Activity_Tracker_WPF
 
         private string GetDate()
         {
-            return DateTime.Today.ToString("[dd-MM-yyyy]");
+            //return DateTime.Today.ToString("[dd-MM-yyyy]");
+            return $"[{DateTime.Today:dd-MM-yyyy}]";
         }
 
         private string GetTask()
         {
-            //- [11:00-11:30] worked on Activity Tracker WPF
-            return DateTime.Now.ToString("- [HH:mm-HH:mm] ");
-
+            //return DateTime.Now.ToString("- [HH:mm-HH:mm] ");
+            return $"- [{DateTime.Now:HH:mm-HH:mm}] worked on ";
         }
 
         private void LoadFile(string path)
@@ -125,6 +123,11 @@ namespace Activity_Tracker_WPF
         private void SaveFile()
         {
             File.WriteAllText(Settings.Default.LastPath, dataTextBox.Text);
+        }
+
+        private void CreateNewFile(object sender, System.Windows.RoutedEventArgs e)
+        {
+
         }
     }
 }
