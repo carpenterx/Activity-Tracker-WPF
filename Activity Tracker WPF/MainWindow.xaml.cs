@@ -145,5 +145,18 @@ namespace Activity_Tracker_WPF
         {
             return $"{Settings.Default.FilenameTemplate} [{DateTime.Now:MMMM yyyy}].txt";
         }
+
+        private void MouseMoveHandler(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            double yPosition = e.GetPosition(this).Y;
+            if (yPosition < 90)
+            {
+                topButtons.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                topButtons.Visibility = System.Windows.Visibility.Collapsed;
+            }
+        }
     }
 }

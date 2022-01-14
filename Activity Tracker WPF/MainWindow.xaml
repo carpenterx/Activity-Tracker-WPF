@@ -11,7 +11,8 @@
         Height="800" Width="740"
         TitleCharacterCasing="Normal"
         WindowStartupLocation="CenterScreen"
-        Closing="ClosingHandler">
+        Closing="ClosingHandler"
+        MouseMove="MouseMoveHandler" >
     <mah:MetroWindow.Resources>
         <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="Label" x:Key="LabelHover">
             <Setter Property="BorderThickness" Value="1"/>
@@ -33,9 +34,10 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
+        <StackPanel x:Name="topButtons" Orientation="Horizontal" Visibility="Collapsed">
             <Button Content="Browse" Width="80" Click="BrowseToFile" Opacity="0.8" Margin="2"/>
             <Button Content="Add" Width="80" Click="CreateNewFile" Opacity="0.8" Margin="2"/>
+            <Label x:Name="mouseLabel"/>
         </StackPanel>
 
         <Grid Grid.Row="1" HorizontalAlignment="Center" Opacity="0.8" Margin="0,20,0,10">
