@@ -155,7 +155,7 @@ namespace Activity_Tracker_WPF
             }
             else
             {
-                topButtons.Visibility = System.Windows.Visibility.Collapsed;
+                topButtons.Visibility = System.Windows.Visibility.Hidden;
             }
         }
     }

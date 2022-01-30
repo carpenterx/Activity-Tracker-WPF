@@ -34,7 +34,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <StackPanel x:Name="topButtons" Orientation="Horizontal" Visibility="Collapsed">
+        <StackPanel x:Name="topButtons" Orientation="Horizontal" Visibility="Hidden">
             <Button Content="Browse" Width="80" Click="BrowseToFile" Opacity="0.8" Margin="2"/>
             <Button Content="Add" Width="80" Click="CreateNewFile" Opacity="0.8" Margin="2"/>
             <Label x:Name="mouseLabel"/>
